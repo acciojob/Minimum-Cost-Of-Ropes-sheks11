@@ -3,8 +3,11 @@ function calculateMinCost() {
   var input=document.querySelector("#rope-lengths").value;
   var ropes=input.split(",");
   ropes.sort(function (a,b) {
-	  return a-b;	
+	  return a-b	
   });
+	for(let i=0;i<ropes.length;i++){
+		ropes[i]=Number(ropes[i]);
+	}
   var totalCost=0;
 	var cost=0;
 	while(ropes.length>1){
@@ -16,6 +19,6 @@ function calculateMinCost() {
 	  return a-b	
   });
 	}
- document.querySelector("#rope-lengths").textContent=totalCost;
+ document.querySelector("#result").textContent=totalCost;
  
 }  
